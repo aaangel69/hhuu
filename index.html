@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>whatdog</title>
+
+
+    <style >
+        .avatar{
+            width: 60px;
+            border-radius: 30px;
+            
+        }
+        .msm1{
+            background-color: aqua;
+            padding: 13px;
+            border-radius: 25px;
+            border-bottom-left-radius: 0px;
+            display: inline-block;
+            margin-left: 8px;
+        }
+        .usuario{
+            display:flex ;
+        }
+        .avatar2{
+            width: 60px;
+            border-radius: 30px;
+        }
+        .msm2{
+            background-color: blue;
+            padding: 13px;
+            border-radius: 25px;
+            border-bottom-left-radius: 0px;
+            display: inline-block;
+            margin: 8px;
+        }
+        .usuario2{
+            display: flex;
+            margin-left: 20%;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+ <!--usuario 1-->
+ 
+ <div id="contenedor">
+
+     
+ </div>
+
+ <div style="display: flex;">
+ <div>
+    <input type="text" id="mensaje1">
+ <button onclick="msmusuario1()">Enviar mensaje</button>
+ </div>
+ <div>
+    <input type="text" id="mensaje2">
+ <button onclick="msmusuario2()">Enviar mensaje</button>
+ </div>
+ </div>
+
+
+ <script>
+    var caja=document.getElementById('contenedor')
+    
+    
+    
+    console.log(caja.outerHTML)
+
+    function msmusuario1(){
+        var contenidoActual = caja.outerHTML
+        var text= document.getElementById('mensaje1').value
+        
+        caja.innerHTML=`${contenidoActual} <div class="usuario">
+    <div>
+        <img class="avatar" src="https://w7.pngwing.com/pngs/165/652/png-transparent-businessperson-computer-icons-avatar-avatar-heroes-public-relations-business.png" alt="">
+
+    </div>
+
+    <div class="msm1">
+        <span>${text}</span><br>
+        <span>09:25</span>
+
+    </div>
+
+    </div>
+   `
+   document.getElementById('mensaje1').value=""
+    }
+
+    function msmusuario2(){
+        var contenidoActual = caja.outerHTML
+        var text= document.getElementById('mensaje2').value
+        
+       caja.innerHTML=` ${contenidoActual}
+          <div class="usuario2">
+             <div>
+            <img class="avatar2" src="https://static.vecteezy.com/system/resources/previews/002/002/297/original/beautiful-woman-avatar-character-icon-free-vector.jpg" alt="">
+    
+           </div>
+    
+        <div class="msm2">
+            <span>${text}</span><br>
+            <span>09:25</span>
+    
+        </div>
+
+    
+
+ </div>`
+ document.getElementById('mensaje2').value=""
+}
+ </script>
+    
+</body>
+</html>
